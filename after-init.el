@@ -39,22 +39,25 @@
   (setq org-re-reveal-root "file:////home/sdowney/bld/reveal.js")
   )
 
-(use-package org2blog
-  :config
-  ;; Don't use sourcecode tags in wordpress
-  (setq org2blog/wp-use-sourcecode-shortcode nil)
-  ;; Default parameters for sourcecode tag
-  (setq org2blog/wp-sourcecode-default-params nil)
-  (setq org2blog/wp-image-upload t)
-  (setq org2blog/wp-blog-alist
-        '(("sdowney"
-           :url "http://www.sdowney.org/xmlrpc.php"
-           :username "sdowney"
-           :default-title "Hello World"
-           :default-categories ("org2blog" "emacs")
-           :tags-as-categories nil)
-          ))
-  )
+;;; ORG TO BLOG REDEFINES org-html-underline
+;;; ONLY USE THE PACKAGE WHEN EXPORTING TO BLOG
+
+;; (use-package org2blog
+;;   :config
+;;   ;; Don't use sourcecode tags in wordpress
+;;   (setq org2blog/wp-use-sourcecode-shortcode nil)
+;;   ;; Default parameters for sourcecode tag
+;;   (setq org2blog/wp-sourcecode-default-params nil)
+;;   (setq org2blog/wp-image-upload t)
+;;   (setq org2blog/wp-blog-alist
+;;         '(("sdowney"
+;;            :url "http://www.sdowney.org/xmlrpc.php"
+;;            :username "sdowney"
+;;            :default-title "Hello World"
+;;            :default-categories ("org2blog" "emacs")
+;;            :tags-as-categories nil)
+;;           ))
+;;   )
 
 
 (with-eval-after-load 'org-superstar
@@ -105,3 +108,5 @@
   :init
   (setq org-latex-src-block-backend 'engraved)
   (setq org-latex-engraved-theme t))
+
+(use-package citeproc :ensure t)
