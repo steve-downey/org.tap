@@ -3,6 +3,8 @@
   ;; Following line is not needed if use-package.el is in ~/.emacs.d
   (require 'use-package))
 
+(require 'org2blog-init)
+
 (use-package graphviz-dot-mode
   :config
   (setq graphviz-dot-indent-width 4))
